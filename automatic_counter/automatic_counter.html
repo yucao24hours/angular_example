@@ -1,0 +1,20 @@
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script>
+angular.module('CounterApp', [])
+	.controller('CounterController', function ($scope, $timeout) {
+		$scope.counter = 0;
+		var updateCounter = function() {
+			$scope.counter++;
+			// $timeout は関数。
+			// 第一引数はコールバック関数オブジェクト、第二引数はミリ秒
+			// 1000 つまり 1 秒という値を渡すことで、この $timeout が呼ばれてから 1 秒後に updateCounter が呼ばれる、というスケジューリングをしている
+			$timeout(updateCounter, 1000);
+		};
+		updateCounter();
+	});
+</script>
+<div ng-app='CounterApp'>
+	<div ng-controller='CounterController'>
+		{{counter}}
+	</div>
+</div>

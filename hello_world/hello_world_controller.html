@@ -1,0 +1,8 @@
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="hello_world_controller.js"></script>
+<!-- Angular を使った JS ファイルで定義したコントローラ、モジュールを .html ファイルで使えるようにするためには、ng-app および ng-controller というアトリビュートを作成し、その値を JS 側で定義した名前にしてやる。 -->
+<div ng-app="HelloWorldApp">
+	<div ng-controller="HelloWorldController">
+		<h1>{{greeting}}</h1>
+	</div>
+</div>

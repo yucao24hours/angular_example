@@ -1,0 +1,7 @@
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<div ng-app>
+	<!-- ng-init はページがロードされたら一度だけ実行される -->
+	<!-- ng-click はクリックされたたびに実行される -->
+	<button ng-init="counter = 0" ng-click="counter = counter + 1">Increment</button>
+	{{counter}}
+</div>
