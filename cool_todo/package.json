@@ -1,0 +1,11 @@
+{
+  "name": "cool_todo",
+  "version": "1.0.0",
+  "description": "This is cool todo app",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-sass": "",
+    "angular": "",
+    "typescript": ""
+  }
+}
