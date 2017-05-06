@@ -34,7 +34,7 @@ export class AppComponent {
     for (let i = 0; i < 10; i++) {
       answer = answer * (1 + this.rate / 100);
       ret.push(Math.floor(answer));
-      return ret;
     }
+    return ret;
   }
 }
