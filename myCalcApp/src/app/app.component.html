@@ -16,5 +16,18 @@
         BMI 値<br />{{calcBmi() | number}}
       </p>
     </div>
+    <p>
+    <button
+         class="btn btn-warning btn-block myButton"
+         (click)="clear()">クリア
+    </button>
+    </p>
+    <p>
+    <button
+         class="btn btn-success btn-block myButton"
+         [disabled]="!(height && weight)"
+         (click)="save()">保存
+         </button>
+    </p>
   </div>
 </div>

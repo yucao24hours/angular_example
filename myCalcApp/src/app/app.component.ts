@@ -19,4 +19,29 @@ export class AppComponent {
     let bmi: number = this.weight / (height_meter ** 2);
     return bmi;
   }
+
+  save(): void {
+    localStorage.setItem(
+      "height", this.height.toString());
+    localStorage.setItem(
+      "weight", this.weight.toString());
+  }
+
+  clear(): void {
+    localStorage.setItem("height", "0");
+    localStorage.setItem("weight", "0");
+    this.height = 0;
+    this.weight = 0;
+  }
+
+  ngOnInit() {
+    if (localStorage.getItem("height")) {
+      this.height = Number(localStorage.getItem("height"));
+      this.weight = Number(localStorage.getItem("weight"));
+    }
+    else
+    {
+      this.clear();
+    }
+  }
 }
