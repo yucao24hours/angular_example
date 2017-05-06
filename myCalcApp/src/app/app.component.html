@@ -24,13 +24,12 @@
       </p>
       <!--明細表示-->
       <table class="table table-bordered table-striped">
-      <!-- TS の ... of xxx は each のように要素をすべてイテレートする。... of xxx はそのリストのキーをすべて渡してイテレートする。-->
         <tr
-             *ngIf="let value of calcArray(); let i = index">
+             *ngFor="let value of calcArray(); let i = index">
+          <td>{{i}}年目</td>
           <td>{{value | number}}円</td>
         </tr>
       </table>
-
     </div>
   </div>
 </div>
