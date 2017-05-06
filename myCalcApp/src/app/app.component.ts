@@ -23,4 +23,18 @@ export class AppComponent {
     }
     return Math.floor(answer); // 計算結果を整数に変換して返す
   }
+
+  // 年ごとの金額明細
+  calcArray(): number[] {
+    if (isNaN(this.initValue) || isNaN(this.rate)) {
+      return null;
+    }
+    let answer: number = this.initValue;
+    let ret: number[] = [answer];
+    for (let i = 0; i < 10; i++) {
+      answer = answer * (1 + this.rate / 100);
+      ret.push(Math.floor(answer));
+      return ret;
+    }
+  }
 }
