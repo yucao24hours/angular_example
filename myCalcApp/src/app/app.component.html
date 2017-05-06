@@ -13,7 +13,7 @@
     </p>
     <div *ngIf="height && weight">
       <p class="alert alert-info myLargeText text-center">
-        BMI 値<br />{{calcBmi() | number}}
+        BMI 値<br />{{bmiService.calcBmi(height, weight) | number}}
       </p>
     </div>
     <p>
