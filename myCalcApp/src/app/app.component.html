@@ -1,0 +1,33 @@
+<div class="panel panel-default myPanel mySmallPanel myText">
+  <div class="panel-heading text-center myPanelTitlebar">
+    BMI を調べよう
+  </div>
+  <div class="panel-body">
+    <p>身長<br />
+      <input type="tel"
+             [(ngModel)]="height"> cm
+    </p>
+    <p>体重<br />
+      <input type="tel"
+             [(ngModel)]="weight"> kg
+    </p>
+    <div *ngIf="height && weight">
+      <p class="alert alert-info myLargeText text-center">
+        BMI 値<br />{{bmiService.calcBmi(height, weight) | number}}
+      </p>
+    </div>
+    <p>
+    <button
+         class="btn btn-warning btn-block myButton"
+         (click)="clear()">クリア
+    </button>
+    </p>
+    <p>
+    <button
+         class="btn btn-success btn-block myButton"
+         [disabled]="!(height && weight)"
+         (click)="save()">保存
+         </button>
+    </p>
+  </div>
+</div>
